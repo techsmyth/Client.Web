@@ -16,6 +16,7 @@ import { Routing } from './navigation';
 import { Error as ErrorPage } from './pages/Error';
 import sentryBootstrap from './sentry/bootstrap';
 import configureStore from './store';
+import Snowfall from 'react-snowfall';
 
 const graphQLEndpoint =
   (env && env.REACT_APP_GRAPHQL_ENDPOINT) ||
@@ -87,6 +88,7 @@ const ReduxRoot: FC = () => {
               <UserProvider>
                 <BrowserRouter>
                   <App>
+                    {<Snowfall color={'#dee4fd'} snowflakeCount={200} style={{ zIndex: 10000 }} />}
                     <Routing />
                   </App>
                 </BrowserRouter>
